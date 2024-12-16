@@ -1,0 +1,56 @@
+@use "../abstracts/constants";
+@use "../abstracts/mixins";
+
+html {
+  font-size: 30px;
+  font-family: "Rubik Doodle Shadow", system-ui;
+  color: constants.$color-text;
+}
+
+body {
+  background-color: constants.$color-background;
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 10vh;
+
+  @include mixins.media-middle {
+    gap: 2vh;
+  }
+}
+
+body.lock {
+  overflow: hidden;
+}
+
+h1 {
+  max-width: max-content;
+  margin: 50px auto 20px;
+ 
+  @include mixins.media-middle {
+    margin-top: 20px;
+    font-size: 1.5rem;
+  }
+
+  @include mixins.media-tablet {
+    font-size: 1rem;
+  }
+
+}
+
+main {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+
+  @include mixins.media-middle {
+    flex-direction: column;
+    gap: 6vh;
+  }
+}

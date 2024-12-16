@@ -1,0 +1,62 @@
+@use "../abstracts/constants";
+@use "../abstracts/mixins";
+
+.button {
+  cursor: pointer;
+  height: 50px;
+  box-sizing: border-box;
+  border-radius: 10px;
+
+  font-family: 'Rubik Doodle Shadow', system-ui;
+  font-size: 0.7rem;
+  transform: scale(1);
+
+  @include mixins.media-hover {
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+}
+
+.keyboard__button {
+  width: 60px;
+  
+  background-color: constants.$color-key;
+  border-color: constants.$color-key-border;
+
+  opacity: 1;
+  transition: opacity 1s ease;
+
+  &_hide {
+    opacity: 0;
+    cursor: default;
+  }
+
+  @include mixins.media-tablet {
+    width: 40px;
+    height: 40px;
+    font-size: 0.5rem;
+  }
+
+  @include mixins.media-mobile {
+    width: 30px;
+    height: 30px;
+    font-size: 0.5rem;
+  }
+}
+
+.modal__button {
+  font-size: 0.9rem;
+  width: 200px;
+  height: 50px;
+  background-color: constants.$color-background-modal-button;
+
+  @include mixins.media-tablet {
+    font-size: 0.7rem;
+  }
+
+  @include mixins.media-mobile {
+    font-size: 0.6rem;
+  }
+}
+

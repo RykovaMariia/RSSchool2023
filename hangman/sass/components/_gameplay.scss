@@ -1,0 +1,74 @@
+@use "../abstracts/mixins";
+@use "../abstracts/constants";
+
+.gameplay {
+  box-sizing: border-box;
+  width: 60%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  justify-content: start;
+  font-size: 0.7rem;
+
+  @include mixins.media-middle {
+    width: 100%;
+    font-size: 0.5rem;
+    gap: 30px;
+    }
+}
+
+.gameplay__word {
+  margin: auto;
+  font-size: 1.2rem;
+  line-height: 2;
+  letter-spacing: 1rem;
+
+  @include mixins.media-tablet {
+    font-size: 1rem;
+    }
+
+  @include mixins.media-middle {
+    font-size: 0.7rem;
+    letter-spacing: 0.7rem;
+    }
+  
+}
+
+.hint {
+  width: 80%;
+  margin: auto;
+  align-content: center;
+  letter-spacing: 0.1rem;
+  text-align: justify;
+
+  @include mixins.media-mobile {
+    width: 100%;
+  }
+}
+
+.incorrect-guesses {
+  letter-spacing: 0.1rem;
+}
+
+.incorrect-guesses__count {
+  color: constants.$color-accent;
+  font-size: 0.8rem;
+  
+}
+
+.keyboard {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  @include mixins.media-mobile {
+    width: 100%;
+    gap: 5px;
+  }
+}
+

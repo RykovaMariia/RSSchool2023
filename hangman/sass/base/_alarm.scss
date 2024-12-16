@@ -1,0 +1,38 @@
+@use "../abstracts/constants";
+@use "../abstracts/mixins";
+
+.alarm-window {
+  width: 230px;
+  height: 230px;
+  position: absolute;
+  right: 10%;
+  top: 0;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.alarm-window_open {
+  opacity: 1;
+
+  @include mixins.media-mobile {
+    opacity: 0;
+  }
+}
+
+.modal-alarm {
+ width: 230px;
+ position: absolute;
+
+ z-index: 1;
+}
+
+.alarm-lang {
+  font-size: 0.4rem;
+  text-align: center;
+  position: relative;
+  padding: 70px 40px 80px 80px;
+  z-index: 10;
+  line-height: 0.6rem;
+  letter-spacing: 0.05rem;
+  color: constants.$color-text;
+}

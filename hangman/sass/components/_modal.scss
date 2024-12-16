@@ -1,0 +1,81 @@
+@use "../abstracts/constants";
+@use "../abstracts/mixins";
+
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+  background-color: constants.$color-background-modal;
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__window {
+  position: absolute;
+  width: 400px;
+  border-radius: 30px;
+  border: constants.$color-text 2px solid;
+  border-color: constants.$color-text;
+  background-color: constants.$color-background-modal-window;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+
+  font-size: 1.3rem;
+
+  @include mixins.media-tablet {
+    font-size: 1rem;
+  }
+
+  @include mixins.media-mobile {
+    width: 280px;
+    font-size: 0.9rem;
+    gap: 15px;
+  }
+}
+
+.modal__firework_right {
+  transform: rotate(60deg);
+  position: absolute;
+  top: -10%;
+  right: -10%;
+}
+
+.modal__firework_left {
+  transform: rotate(-60deg);
+  position: absolute;
+  top: 20%;
+  right: 70%;
+}
+
+.modal__img {
+  margin-bottom: 25px;
+
+  @include mixins.media-mobile {
+    margin-bottom: 10px;
+  }
+}
+
+.modal__answer {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+
+  @include mixins.media-tablet {
+    font-size: 0.7rem;
+  }
+
+  @include mixins.media-mobile {
+    font-size: 0.6rem;
+  }
+}
