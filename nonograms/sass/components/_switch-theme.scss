@@ -1,0 +1,66 @@
+@use "../abstracts/constants";
+@use "../abstracts/mixins";
+
+.switch {
+  position: absolute;
+  top: 170px;
+  right: 40px;
+
+  display: block;
+  width: 53px;
+  height: 28px;
+
+  input {
+    display: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
+   }
+}
+
+.switch-toggle {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: constants.$color-background-body-dark;
+ 
+  transition: all 0.2s ease;
+ }
+ 
+ .switch-toggle:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  border-radius: 20px;
+  right: 2px;
+  bottom: 2px;
+  background-color: constants.$color-sky;
+  background-image: url(../assets/theme/sun.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 0.4s ease;
+ }
+ 
+ input:checked + .switch-toggle::before {
+  background-color: constants.$color-background-body-dark;;
+  background-image: url(../assets/theme/moon.png);
+ }
+ 
+ input:checked + .switch-toggle {
+  background-color: constants.$color-background-body-light;
+  box-shadow: inset 0px 0px 8px 0px constants.$color-shadow-dark2;
+ }
+ 
+ input:focus + .switch-toggle {
+  box-shadow: 0 0 1px constants.$color-shadow-dark2;
+ }
+ 
+ input:checked + .switch-toggle:before {
+  transform: translateX(-24px);
+ }

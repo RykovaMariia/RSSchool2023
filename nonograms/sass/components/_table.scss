@@ -1,0 +1,208 @@
+@use "../abstracts/constants";
+@use "../abstracts/mixins";
+
+$width: 540px;
+$width-mobile: 432px;
+$width-mobile-mini: 360px;
+
+.nonograms {
+  min-width: $width;
+  min-height: $width;
+  margin: auto;
+
+  @include mixins.media-mobile {
+    min-width: $width-mobile;
+    min-height: $width-mobile;
+  }
+  @include mixins.media-mobile-mini {
+    min-width: $width-mobile-mini;
+    min-height: $width-mobile-mini;
+  }
+}
+
+table,
+tr,
+td {
+  border: solid 1px constants.$color-text-dark;
+  border-collapse: collapse;
+
+  .dark & {
+    border-color: constants.$color-text-light;
+  }
+}
+
+.nonograms__left,
+.nonograms__top {
+  font-size: 1.8rem;
+  letter-spacing: 0.001rem;
+  line-height: 1.6rem;
+  text-align: center;
+
+  @include mixins.media-mobile {
+    font-size: 1.4rem;
+    line-height: 1.1rem;
+  }
+  @include mixins.media-mobile-mini {
+    font-size: 1.2rem;
+    line-height: 1rem;
+  }
+}
+
+.nonograms__left {
+  width: calc(1 / 6 * $width);
+  @include mixins.media-mobile {
+    width: calc(1 / 6 * $width-mobile);
+    line-height: 1rem;
+    letter-spacing: 0.001rem;
+  }
+  @include mixins.media-mobile-mini {
+    width: calc(1 / 6 * $width-mobile-mini);
+    letter-spacing: 0.001rem;
+  }
+}
+
+.nonograms__top {
+  height: calc(1 / 6 * $width);
+
+  @include mixins.media-mobile {
+    height: calc(1 / 6 * $width-mobile);
+  }
+  @include mixins.media-mobile-mini {
+    height: calc(1 / 6 * $width-mobile-mini);
+  }
+}
+
+.nonograms_disabled .cell {
+  cursor: auto;
+}
+
+.cell {
+  box-sizing: border-box;
+  position: relative;
+  width: calc(1 / 6 * $width);
+  height: calc(1 / 6 * $width);
+  cursor: pointer;
+  background-color: constants.$color-background-body-light;
+  font-size: 6rem;
+  line-height: 6rem;
+  transition: all 0.1s ease;
+
+  .dark & {
+    background-color: constants.$color-background-body-dark;
+  }
+
+  &::before {
+    padding: 0;
+    content: "x";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50%);
+    transition: all 0.1s ease;
+  }
+
+  @include mixins.media-mobile {
+    width: calc(1 / 6 * $width-mobile);
+    height: calc(1 / 6 * $width-mobile);
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+
+  @include mixins.media-mobile-mini {
+    width: calc(1 / 6 * $width-mobile-mini);
+    height: calc(1 / 6 * $width-mobile-mini);
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+
+.cell-medium {
+  width: calc((1 - 1 / 6) / 10 * $width);
+  height: calc((1 - 1 / 6) / 10 * $width);
+  font-size: 4rem;
+  line-height: 4rem;
+
+  @include mixins.media-mobile {
+    width: calc((1 - 1 / 6) / 10 * $width-mobile);
+    height: calc((1 - 1 / 6) / 10 * $width-mobile);
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  @include mixins.media-mobile-mini {
+    width: calc((1 - 1 / 6) / 10 * $width-mobile-mini);
+    height: calc((1 - 1 / 6) / 10 * $width-mobile-mini);
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+}
+
+.cell-small {
+  width: calc((1 - 1 / 6) / 15 * $width);
+  height: calc((1 - 1 / 6) / 15 * $width);
+
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+
+  @include mixins.media-mobile {
+    width: calc((1 - 1 / 6) / 15 * $width-mobile);
+    height: calc((1 - 1 / 6) / 15 * $width-mobile);
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  @include mixins.media-mobile-mini {
+    width: calc((1 - 1 / 6) / 15 * $width-mobile-mini);
+    height: calc((1 - 1 / 6) / 15 * $width-mobile-mini);
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+}
+
+.cell_dark {
+  background-color: constants.$color-cell;
+
+  .dark & {
+    background-color: constants.$color-cell-light;
+  }
+}
+
+.cell_cross::before {
+  opacity: 1;
+}
+
+.first {
+  .cell,
+  .nonograms__left {
+    border-top: solid 2px constants.$color-text-dark;
+    .dark & {
+      border-color: constants.$color-text-light;
+    }
+  }
+}
+
+.cell_first,
+.nonograms__top_first {
+  border-left: solid 2px constants.$color-text-dark;
+  .dark & {
+    border-color: constants.$color-text-light;
+  }
+}
+
+.five {
+  .cell,
+  .nonograms__left {
+    border-bottom: solid 2px constants.$color-text-dark;
+    .dark & {
+      border-color: constants.$color-text-light;
+    }
+  }
+}
+
+.cell_five {
+  border-right: solid 2px constants.$color-text-dark;
+  .dark & {
+    border-color: constants.$color-text-light;
+  }
+}

@@ -1,0 +1,73 @@
+@use "../abstracts/constants";
+@use "../abstracts/mixins";
+
+.button {
+  cursor: pointer;
+  background-color: constants.$color-button;
+  border-color: constants.$color-background-body-light;
+
+  border-radius: 10px;
+
+  font-family: "Indie Flower", cursive;
+  font-size: 2.5rem;
+
+  padding: 0 15px;
+  box-shadow: -5px -5px 10px 0px constants.$color-shadow-light,
+    5px 5px 10px 0px constants.$color-shadow-dark;
+}
+
+.button:disabled {
+  cursor: auto;
+}
+
+.dark .button:disabled {
+  color: constants.$color-shadow-light;
+}
+
+.dark .button {
+  border-color: constants.$color-background-body-dark;
+  box-shadow: -5px -5px 10px 0px constants.$color-shadow-light2,
+    5px 5px 10px 0px constants.$color-shadow-dark2;
+    color: constants.$color-text-light;
+}
+
+.button_continue-last-game,
+.button_solution {
+  background-color: constants.$color-background-body-light-center;
+}
+
+.dark .button_continue-last-game,
+.dark .button_solution {
+  background-color: constants.$color-background-body-dark-center;
+  border-color: constants.$color-background-body-dark-center;
+}
+
+.button_random-game {
+  width: 200px;
+  margin: 0 auto;
+}
+
+.button_continue-last-game {
+  margin-top: 50px;
+}
+
+.button_score {
+  display: none;
+
+  @include mixins.media-middle {
+    position: absolute;
+    display: block;
+    width: max-content;
+
+    background-color: constants.$color-background-body-light-center;
+    font-size: 2rem;
+    top: 170px;
+    left: 25px;
+    border: none; 
+
+    .dark &{
+      background-color: constants.$color-background-body-dark;
+    }
+  }
+}
+

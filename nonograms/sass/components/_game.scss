@@ -1,0 +1,73 @@
+@use "../abstracts/constants";
+@use "../abstracts/mixins";
+
+.game {
+  position: relative;
+  width: 640px;
+  order: 1;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 20px 60px;
+  background-color: constants.$color-background-body-light-center;
+  box-shadow: 5px -40px 40px constants.$color-shadow-dark,
+    -5px -40px 40px constants.$color-shadow-dark;
+
+    .dark & {
+      background-color: constants.$color-background-body-dark-center;
+    }
+
+  @include mixins.media-middle {
+    width: 60%;
+    box-shadow: 40px -40px 40px 0px constants.$color-shadow-dark;
+  }
+
+  @include mixins.media-tablet {
+    width: 100%;
+  }
+
+  @include mixins.media-tablet {
+    padding: 20px 10px 30px;
+  }
+}
+
+.game__time {
+  width: 120px;
+  font-size: 3.5rem;
+  background-color: constants.$color-time;
+  padding: 0 5px;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 4rem;
+  box-shadow: inset 0px 0px 10px 0px constants.$color-shadow-dark2;
+  margin: 70px auto 20px;
+
+  .dark & {
+    color: constants.$color-cell;
+  }
+}
+
+.game__buttons {
+  order: 10;
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  @include mixins.media-tablet {
+    width: 80%;
+    flex-wrap: wrap;
+    margin: 40px auto 0;
+  }
+}
+
+.audio {
+  display: block;
+  position: absolute;
+  top: 30px;
+  left: 200px;
+  cursor: pointer;
+}
