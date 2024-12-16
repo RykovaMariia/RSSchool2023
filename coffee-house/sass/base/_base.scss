@@ -1,0 +1,109 @@
+@use '../abstracts/constants';
+@use '../abstracts/mixins';
+
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+
+body {
+    background-color: constants.$color-background-body;
+    font-size: 1.6rem;
+    font-family: 'Inter', Verdana, sans-serif;
+    position: relative;
+}
+
+body.lock {
+
+    overflow: hidden;
+    scroll-padding-top: 0;
+    scroll-behavior: smooth;
+
+}
+
+.wrapper {
+    max-width: 1360px;
+    margin: auto;
+    padding: 0 40px;
+
+    @include mixins.media-mobile {
+        padding: 0 16px;
+    }
+}
+
+h1 {
+    color: constants.$color-text-light;
+    @include mixins.font(7.2rem, 600, 105%);
+
+    span {
+        color: constants.$color-text-accent;
+        font-style: italic;
+    }
+
+    @include mixins.media-mobile {
+        @include mixins.font(4.2rem, 600, 115%);
+    }
+}
+
+h2 {
+    color: constants.$color-text-dark;
+    @include mixins.font(6rem, 600, 125%);
+    letter-spacing: -0.1px;
+
+    span {
+        color: constants.$color-text-accent;
+        font-style: italic;
+    }
+
+    @include mixins.media-mobile {
+        @include mixins.font(3.2rem, 600, 125%);
+    }
+}
+
+h3 {
+    color: constants.$color-text-dark;
+    @include mixins.font(2.4rem, 600, 125%);
+}
+
+.reference_underlined {
+    cursor: pointer;
+
+    &_menu {
+        cursor: auto;
+    }
+
+    &_menu::after,
+    &::after {
+        content: '';
+        display: block;
+        width: 0%;
+        margin: 2px auto 0;
+        height: 2px;
+        background-color: currentColor;
+        transition: width 0.5s ease-out;
+    }
+
+    &_menu::after {
+        width: 100%;
+    }
+
+    &_none {
+        cursor: auto;
+    }
+
+    @include mixins.media-hover {
+        &:hover {
+            &::after {
+                content: '';
+                display: block;
+                width: 100%;
+            }
+        }
+
+        &_none:hover {
+            &::after {
+                width: 0%;
+            }
+        }
+    }
+}

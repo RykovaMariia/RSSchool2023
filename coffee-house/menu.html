@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./img/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./img/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./img/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./img/favicon_io/site.webmanifest" />
+    <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet" />
+    <link rel="stylesheet" href="./sass/style-menu.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrapper header__wrapper">
+        <a class="icon-logo logo" href="./index.html">
+          <svg class="icon-logo">
+            <use xlink:href="./img/sprite.svg#logo"></use>
+          </svg>
+        </a>
+        <div class="burger">
+          <div class="burger__line"></div>
+          <div class="burger__line"></div>
+        </div>
+        <div class="burger__menu">
+          <nav class="header__navigation">
+            <ul class="navigation">
+              <li>
+                <a
+                  class="reference_underlined"
+                  href="./index.html#favourites-coffee"
+                  >Favorite coffee</a
+                >
+              </li>
+              <li>
+                <a class="reference_underlined" href="./index.html#about"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a class="reference_underlined" href="./index.html#mobile-app"
+                  >Mobile app</a
+                >
+              </li>
+              <li>
+                <a class="reference_underlined" href="#footer">Contact us</a>
+              </li>
+            </ul>
+          </nav>
+          <a
+            class="header__menu reference_underlined header__menu_burger"
+            href="./menu.html"
+          >
+            Menu
+            <svg class="icon-coffee-cup">
+              <use xlink:href="./img/sprite.svg#coffee-cup"></use>
+            </svg>
+          </a>
+        </div>
+        <a
+          class="header__menu header__menu_header reference_underlined_menu"
+          href="./menu.html"
+        >
+          <span>Menu</span>
+          <svg class="icon-coffee-cup">
+            <use xlink:href="./img/sprite.svg#coffee-cup"></use>
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main>
+      <div class="wrapper">
+        <h1 class="menu__heading_none">Menu</h1>
+        <h2 class="menu__heading">
+          Behind each of our cups hides an <span>amazing surprise</span>
+        </h2>
+        <div class="menu__tabs">
+          <div class="tab tab_checked">
+            <div class="tab__circle"></div>
+            <span>Coffee</span>
+          </div>
+          <div class="tab">
+            <div class="tab__circle"></div>
+            <span>Tea</span>
+          </div>
+
+          <div class="tab">
+            <div class="tab__circle"></div>
+            <span>Dessert</span>
+          </div>
+        </div>
+        <div class="menu">
+          <div class="menu-coffee">
+            <div class="menu-item" data-name="Irish coffee">
+              <div class="menu-item__img">
+                <img src="./img/menu/coffee/coffee-1.jpg" alt="Irish coffee" />
+              </div>
+              <div class="menu-item__description">
+                <h3>Irish coffee</h3>
+                <p>
+                  Fragrant black coffee with Jameson Irish whiskey and whipped
+                  milk
+                </p>
+                <div class="menu-price">$7.00</div>
+              </div>
+            </div>
+            <div class="menu-item" data-name="Kahlua coffee">
+              <div class="menu-item__img">
+                <img src="./img/menu/coffee/coffee-2.jpg" alt="Kahlua coffee" />
+              </div>
+              <div class="menu-item__description">
+                <h3>Kahlua coffee</h3>
+                <p>
+                  Classic coffee with milk and Kahlua liqueur under a cap of
+                  frothed milk
+                </p>
+                <div class="menu-price">$7.00</div>
+              </div>
+            </div>
+            <div class="menu-item" data-name="Honey raf">
+              <div class="menu-item__img">
+                <img src="./img/menu/coffee/coffee-3.jpg" alt="Honey raf" />
+              </div>
+              <div class="menu-item__description">
+                <h3>Honey raf</h3>
+                <p>Espresso with frothed milk, cream and aromatic honey</p>
+                <div class="menu-price">$5.50</div>
+              </div>
+            </div>
+            <div class="menu-item" data-name="Ice cappuccino">
+              <div class="menu-item__img">
+                <img
+                  src="./img/menu/coffee/coffee-4.jpg"
+                  alt="Ice cappuccino"
+                />
+              </div>
+              <div class="menu-item__description">
+                <h3>Ice cappuccino</h3>
+                <p>
+                  Cappuccino with soft thick foam in summer version with ice
+                </p>
+                <div class="menu-price">$5.00</div>
+              </div>
+            </div>
+            <div class="menu-item" data-name="Espresso">
+              <div class="menu-item__img">
+                <img src="./img/menu/coffee/coffee-5.jpg" alt="Espresso" />
+              </div>
+              <div class="menu-item__description">
+                <h3>Espresso</h3>
+                <p>Classic black coffee</p>
+                <div class="menu-price">$4.50</div>
+              </div>
+            </div>
+            <div class="menu-item" data-name="Latte">
+              <div class="menu-item__img">
+                <img src="./img/menu/coffee/coffee-6.jpg" alt="Latte" />
+              </div>
+              <div class="menu-item__description">
+                <h3>Latte</h3>
+                <p>
+                  Espresso coffee with the addition of steamed milk and dense
+                  milk foam
+                </p>
+                <div class="menu-price">$5.50</div>
+              </div>
+            </div>
+            <div class="menu-item" data-name="Latte macchiato">
+              <div class="menu-item__img">
+                <img src="./img/menu/coffee/coffee-7.jpg" alt="Latte" />
+              </div>
+              <div class="menu-item__description">
+                <h3>Latte macchiato</h3>
+                <p>Espresso with frothed milk and chocolate</p>
+                <div class="menu-price">$5.50</div>
+              </div>
+            </div>
+            <div class="menu-item" data-name="Coffee with cognac">
+              <div class="menu-item__img">
+                <img
+                  src="./img/menu/coffee/coffee-8.jpg"
+                  alt="Coffee with cognac"
+                />
+              </div>
+              <div class="menu-item__description">
+                <h3>Coffee with cognac</h3>
+                <p>Fragrant black coffee with cognac and whipped cream</p>
+                <div class="menu-price">$6.50</div>
+              </div>
+            </div>
+          </div>
+          <div class="menu__refresh icon icon_background-arrow">
+            <svg class="refresh icon_arrow">
+              <use xlink:href="./img/sprite.svg#refresh"></use>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="wrapper wrapper_footer">
+        <div class="container__footer">
+          <div class="footer__left">
+            <h2>Sip, Savor, Smile. <span>It’s coffee time!</span></h2>
+            <div class="social-networks">
+              <a href="#">
+                <div class="icon icon_background-social">
+                  <svg class="icon_social social-network">
+                    <use xlink:href="./img/sprite.svg#twitter"></use>
+                  </svg>
+                </div>
+              </a>
+              <a href="#">
+                <div class="icon icon_background-social">
+                  <svg class="icon_social social-network">
+                    <use xlink:href="./img/sprite.svg#instagram"></use>
+                  </svg>
+                </div>
+              </a>
+              <a href="#">
+                <div class="icon icon_background-social">
+                  <svg class="icon_social social-network">
+                    <use xlink:href="./img/sprite.svg#facebook"></use>
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="footer__right">
+            <h3>Contact us</h3>
+            <ul>
+              <li>
+                <a
+                  target="_blank"
+                  class="reference_underlined"
+                  href="https://maps.app.goo.gl/xftpbfBeqmgVsG1W7"
+                >
+                  <svg class="icon-logo">
+                    <use xlink:href="./img/sprite.svg#pin-alt"></use>
+                  </svg>
+                  8558 Green Rd., LA
+                </a>
+              </li>
+              <li>
+                <a class="reference_underlined" href="tel:+16035550123">
+                  <svg class="icon-logo">
+                    <use xlink:href="./img/sprite.svg#phone"></use>
+                  </svg>
+                  +1 (603) 555-0123</a
+                >
+              </li>
+              <li>
+                <svg class="icon-logo">
+                  <use xlink:href="./img/sprite.svg#clock"></use>
+                </svg>
+                <span>Mon-Sat: 9:00 AM – 23:00 PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="./js/burger.js"></script>
+
+    <script type="module" src="./js/menu.js"></script>
+    <script type="module" src="./js/Product.js"></script>
+    <script type="module" src="./js/Modal.js"></script>
+  </body>
+</html>

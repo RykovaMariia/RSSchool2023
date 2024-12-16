@@ -1,0 +1,144 @@
+@use '../abstracts/constants';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: open 0.5s;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background: constants.$color-background-backdrop;
+}
+
+@keyframes open {
+    0% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.modal__window {
+    margin: auto 40px;
+    box-sizing: border-box;
+    display: flex;
+    gap: 20px;
+    max-width: 800px;
+    padding: 16px;
+    border-radius: 40px;
+    background-color: constants.$color-background-body;
+    @include mixins.font(1.6rem, 400, 150%);
+    color: constants.$color-text-dark;
+
+    @include mixins.media-tablet {
+        max-width: 688px;
+    }
+
+    @include mixins.media-tablet-middle {
+        margin: auto 19px;
+    } 
+
+    .modal__img {
+        width: 309px;
+        height: 309px;
+        flex-shrink: 0;
+
+        @include mixins.media-tablet-middle {
+            display: none;
+        } 
+    }
+}
+
+.modal__content {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+
+    .modal__description {
+        display: flex;
+        gap: 12px;
+        flex-direction: column;
+    }
+
+    .modal__choose {
+        display: flex;
+        gap: 8px;
+        flex-direction: column;
+        letter-spacing: -0.1px;
+    }
+
+    .modal__tabs {
+        display: flex;
+        gap: 8px;
+        
+        .tab {
+            padding: 7px 16px 7px 7px;
+        }
+
+        @include mixins.media-tablet {
+            flex-wrap: wrap;
+        }
+
+        .modal__circle {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+    }
+
+    .modal__total {
+        display: flex;
+        justify-content: space-between;
+        color: constants.$color-text-dark;
+        @include mixins.font(2.4rem, 600, 125%);
+    }
+
+    .modal__alert {
+        border-top: 1px solid constants.$color-border-light;
+        display: flex;
+        gap: 8px;
+        padding: 12px 0;
+        @include mixins.font(1rem, 600, 140%);
+
+        .alert__icon {
+            display: block;
+            align-self: flex-start;
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+        }
+    }
+
+    .modal__close {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100px;
+        border: 1px solid constants.$color-border-dark;
+        padding: 10px 78px;
+        cursor: pointer;
+        @include mixins.font(1.6rem, 600, 150%);
+        @extend %transition;
+
+        @include mixins.media-hover {
+            &:hover {
+                background-color: constants.$color-background-container;
+                border-color: constants.$color-background-container;
+                color: constants.$color-text-light;
+            }
+        }
+    }
+}

@@ -1,0 +1,78 @@
+@use '../abstracts/constants';
+@use '../abstracts/mixins';
+
+.burger {
+    display: none;
+
+    @include mixins.media-tablet {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        width: 44px;
+        height: 44px;
+        border-radius: 100px;
+        border: 1px solid constants.$color-border-dark;
+
+        &_opened .burger__line:first-child {
+            transform-origin: left;
+            transform: translate(2px, -2px) rotate(45deg);
+        }
+        &_opened .burger__line:last-child {
+            transform-origin: left;
+            transform: translate(2px, 2px) rotate(-45deg);
+        }
+    }
+
+    .burger__line {
+        box-sizing: border-box;
+        width: 17.5px;
+        border-radius: 100px;
+        background-color: constants.$color-border-dark;
+        border: 1px solid constants.$color-border-dark;
+        transition: all 0.6s ease 0s;
+    }
+}
+
+.burger__menu {
+    @include mixins.media-tablet {
+        z-index: 10;
+        box-sizing: border-box;
+        position: fixed;
+        overflow-y: auto;
+        top: 100px;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: constants.$color-background-body;
+        padding: 60px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 97px;
+        opacity: 0;
+        transition: all 0.6s ease 0s;
+
+        a {
+            @include mixins.font(3.2rem, 600, 125%);
+            display: block;
+            width: max-content;
+
+            .icon-coffee-cup {
+                vertical-align: top;
+            }
+        }
+
+        .header__menu_burger .icon-coffee-cup {
+            width: 40px;
+            height: 40px;
+        }
+
+        &_opened {
+            transform: translateX(-100%);
+            opacity: 100%;
+        }
+    }
+}

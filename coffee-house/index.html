@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee House</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./img/favicon_io/apple-touch-icon.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./img/favicon_io/favicon-32x32.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./img/favicon_io/favicon-16x16.png"
+    >
+    <link rel="manifest" href="./img/favicon_io/site.webmanifest">
+    <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet">
+    <link rel="stylesheet" href="./sass/style.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="wrapper header__wrapper">
+        <a class="icon-logo logo" href="./index.html">
+          <svg class="icon-logo">
+            <use xlink:href="./img/sprite.svg#logo"></use>
+          </svg>
+        </a>
+        <div class="burger">
+          <div class="burger__line"></div>
+          <div class="burger__line"></div>
+        </div>
+        <div class="burger__menu">
+          <nav class="header__navigation">
+            <ul class="navigation">
+              <li>
+                <a class="reference_underlined" href="#favourites-coffee"
+                  >Favorite coffee</a
+                >
+              </li>
+              <li><a class="reference_underlined" href="#about">About</a></li>
+              <li>
+                <a class="reference_underlined" href="#mobile-app"
+                  >Mobile app</a
+                >
+              </li>
+              <li>
+                <a class="reference_underlined" href="#footer">Contact us</a>
+              </li>
+            </ul>
+          </nav>
+          <a class="header__menu reference_underlined header__menu_burger" href="./menu.html">
+            Menu
+            <svg class="icon-coffee-cup">
+              <use xlink:href="./img/sprite.svg#coffee-cup"></use>
+            </svg>
+          </a>
+        </div>
+        <a class="header__menu reference_underlined header__menu_header" href="./menu.html">
+          Menu
+          <svg class="icon-coffee-cup">
+            <use xlink:href="./img/sprite.svg#coffee-cup"></use>
+          </svg>
+        </a>
+      </div>
+    </header>
+    <main>
+      <section>
+        <div class="wrapper enjoy__wrapper">
+          <div class="enjoy__container">
+            <video class="video" autoplay muted loop playsinline src="./img/video-_1080p_.webm"></video>
+            <h1 class="enjoy__heading">
+              <span>Enjoy</span> premium coffee at our charming cafe
+            </h1>
+            <p class="enjoy__content">
+              With its inviting atmosphere and delicious coffee options, the
+              Coffee House Resource is a popular destination for coffee lovers
+              and those seeking a warm and inviting space to enjoy their
+              favorite beverage.
+            </p>
+            <a href="./menu.html" class="button-menu">
+              <span>Menu</span>
+              <svg class="icon-coffee-cup">
+                <use xlink:href="./img/sprite.svg#coffee-cup"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section id="favourites-coffee">
+        <div class="wrapper favourites-coffee__wrapper">
+          <h2 class="favourites-coffee__heading">
+            Choose your <span>favorite</span> coffee
+          </h2>
+          <div class="slider">
+            <div class="slider__arrow icon icon_background-arrow">
+              <svg class="icon_arrow">
+                <use xlink:href="./img/sprite.svg#arrow-left"></use>
+              </svg>
+            </div>
+            <div class="slider__content">
+              <div class="slider__line">
+                <div class="slider__slide">
+                  <div class="slider__wrapper">
+                  <img
+                    class="slide__image"
+                    src="./img/favourites-coffee/coffee-slider-1.png"
+                    alt="Image Frappuccino"
+                  >
+                  <div class="slide__description">
+                    <h3>S’mores Frappuccino</h3>
+                    <p class="slide__description__text">
+                      This new drink takes an espresso and mixes it with brown
+                      sugar and cinnamon before being topped with oat milk.
+                    </p>
+                    <div class="slide__price">$5.50</div>
+                  </div>
+                </div>
+                </div>
+                <div class="slider__slide">
+                  <div class="slider__wrapper">
+                  <img
+                    class="slide__image"
+                    src="./img/favourites-coffee/coffee-slider-2.png"
+                    alt="Image Macchiato"
+                  >
+                  <div class="slide__description">
+                    <h3>Caramel Macchiato</h3>
+                    <p class="slide__description__text">
+                      Fragrant and unique classic espresso with rich
+                      caramel-peanut syrup, with cream under whipped thick foam.
+                    </p>
+                    <div class="slide__price">$5.00</div>
+                  </div>
+                </div>
+                </div>
+                <div class="slider__slide">
+                  <div class="slider__wrapper">
+                  <img
+                    class="slide__image"
+                    src="./img/favourites-coffee/coffee-slider-3.png"
+                    alt="Ice coffee"
+                  >
+                  <div class="slide__description">
+                    <h3>Ice coffee</h3>
+                    <p class="slide__description__text">
+                      A popular summer drink that tones and invigorates.
+                      Prepared from coffee, milk and ice.
+                    </p>
+                    <div class="slide__price">$4.50</div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+            <div class="slider__arrow icon icon_background-arrow">
+              <svg class="icon_arrow">
+                <use xlink:href="./img/sprite.svg#arrow-right"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="slider__controls">
+            <div class="control control_checked">
+              <progress value="0" max="100" ></progress>
+            </div>
+            <div class="control">
+              <progress value="0" max="100" ></progress>
+            </div>
+            <div class="control">
+              <progress value="0" max="100" ></progress>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about">
+        <div class="wrapper about__wrapper">
+          <h2>
+            Resource is <span>the perfect and cozy place</span> where you can
+            enjoy a variety of hot beverages, relax, catch up with friends, or
+            get some work done.
+          </h2>
+          <div class="container">
+            <div class="container__left">
+              <div class="about__img about__img_high">
+                <img  src="./img/about/about-1.jpg" alt="the girl with coffee">
+              </div>
+              <div class="about__img about__img_short">
+                <img  src="./img/about/about-2.jpg" alt="the girl with coffee">
+              </div>
+            </div>
+            <div class="container__right">
+              <div class="about__img about__img_short">
+                <img  src="./img/about/about-3.jpg" alt="the girl with coffee">
+              </div>
+              <div class="about__img about__img_high">
+                <img  src="./img/about/about-4.jpg" alt="the girl with coffee">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="mobile-app">
+        <div class="wrapper mobile-app__wrapper">
+          <div class="mobile-app__left">
+            <h2><span>Download</span> our apps to start ordering</h2>
+            <p class="mobile-app__content">
+              Download the Resource app today and experience the comfort of
+              ordering your favorite coffee from wherever you are
+            </p>
+            <div class="mobile-app__buttons">
+              <a href="#" class="mobile-button">
+                <svg class="button-icon">
+                  <use xlink:href="./img/sprite.svg#app-store"></use>
+                </svg>
+                <span class="button-app__content">
+                  Available on the<br>
+                  <span>App Store</span>
+                </span>
+              </a>
+              <a href="#" class="mobile-button">
+                <svg class="button-icon">
+                  <use xlink:href="./img/sprite.svg#google-play"></use>
+                </svg>
+                <span class="button-app__content">
+                  Available on <br>
+                  <span>Google Play</span>
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="mobile-app__right">
+          <img class="mobiles-img" src="./img/mobile-app/mobile-screens.png" alt="mobiles">
+        </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer">
+      <div class="wrapper wrapper_footer">
+        <div class="container__footer">
+          <div class="footer__left">
+            <h2>Sip, Savor, Smile. <span>It’s coffee time!</span></h2>
+            <div class="social-networks">
+              <a href="#">
+                <div class="icon icon_background-social">
+                  <svg class="icon_social social-network">
+                    <use xlink:href="./img/sprite.svg#twitter"></use>
+                  </svg>
+                </div>
+              </a>
+              <a href="#">
+                <div class="icon icon_background-social">
+                  <svg class="icon_social social-network">
+                    <use xlink:href="./img/sprite.svg#instagram"></use>
+                  </svg>
+                </div>
+              </a>
+              <a href="#">
+                <div class="icon icon_background-social">
+                  <svg class="icon_social social-network">
+                    <use xlink:href="./img/sprite.svg#facebook"></use>
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="footer__right">
+            <h3>Contact us</h3>
+            <ul>
+              <li>
+                <a target="_blank"
+                  class="reference_underlined"
+                  href="https://maps.app.goo.gl/xftpbfBeqmgVsG1W7"
+                >
+                  <svg class="icon-logo">
+                    <use xlink:href="./img/sprite.svg#pin-alt"></use>
+                  </svg>
+                  8558 Green Rd., LA
+                </a>
+              </li>
+              <li>
+                <a class="reference_underlined" href="tel:+16035550123">
+                  <svg class="icon-logo">
+                    <use xlink:href="./img/sprite.svg#phone"></use>
+                  </svg>
+                  +1 (603) 555-0123</a
+                >
+              </li>
+              <li class="reference_underlined reference_underlined_none">
+                <svg class="icon-logo">
+                  <use xlink:href="./img/sprite.svg#clock"></use>
+                </svg>
+                <span>Mon-Sat: 9:00 AM – 23:00 PM</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="./js/burger.js"></script>
+    <script type="module" src="./js/slider.js"></script>
+  </body>
+</html>

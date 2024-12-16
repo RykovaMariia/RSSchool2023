@@ -1,0 +1,68 @@
+@use '../abstracts/mixins';
+
+.about__wrapper {
+    padding-top: 100px;
+}
+
+.container {
+    padding-top: 40px;
+    @include mixins.columns(660px);
+
+    @include mixins.media-tablet {
+        @include mixins.columns(688px);
+        flex-wrap: wrap;
+    }
+}
+
+.container__left, .container__right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.about__img {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        object-position: center;
+        transform: scale(1.1);
+        transition: all 0.6s ease 0s;
+
+        @include mixins.media-hover {
+            &:hover {
+                transform: scale(1);
+            }
+        }
+
+        @include mixins.media-hover-none {
+            transform: scale(1.1);
+            
+        }
+
+        @include mixins.media-tablet {
+            transform: scale(1.05);
+        }
+
+        @include mixins.media-mobile {
+            transform: scale(1.23);        
+        }
+    }
+
+    &_high {
+        height: 590px; 
+    }
+
+    &_short {
+        height: 430px;
+
+        @include mixins.media-tablet {
+            display: none;
+        }
+    }
+}

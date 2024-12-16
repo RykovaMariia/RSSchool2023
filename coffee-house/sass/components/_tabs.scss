@@ -1,0 +1,63 @@
+@use '../abstracts/constants';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+
+.tab {
+    padding: 7px 15px 7px 7px;
+    border-radius: 100px;
+    border: 1px solid constants.$color-border-light;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    @extend %transition;
+
+    span {
+        color: constants.$color-text-dark;
+        @include mixins.font(1.6rem, 600, 150%);
+        @extend %transition;
+    }
+
+    .tab__circle {
+        box-sizing: border-box;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        padding: 5px 7px;
+        background-color: constants.$color-border-light;
+        @extend %transition;
+        align-content: center;
+    }
+
+    &_checked {
+        background-color: constants.$color-background-container;
+        border-color: constants.$color-background-container;
+
+        .tab__circle {
+            background-color: constants.$color-background-body;
+        }
+
+        span {
+            color: constants.$color-text-light;
+        }
+    }
+
+    @include mixins.media-hover {
+        &:hover {
+            background-color: constants.$color-background-container;
+            border-color: constants.$color-background-container;
+
+            .tab__circle {
+                background-color: constants.$color-background-body;
+            }
+
+            span {
+                color: constants.$color-text-light;
+            }
+        }
+    }
+
+    &_checked {
+        cursor: auto;
+    }
+}

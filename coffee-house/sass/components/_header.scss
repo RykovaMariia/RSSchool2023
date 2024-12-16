@@ -1,0 +1,74 @@
+@use '../abstracts/constants';
+@use '../abstracts/mixins';
+
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px 20px;
+
+    @include mixins.media-mobile {
+        padding: 20px 16px;
+    }
+}
+
+.icon-logo {
+    width: 100px;
+    height: 60px;
+}
+
+.header__navigation {
+    .navigation {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        @include mixins.media-tablet {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 56px;
+        }
+    }
+
+    li {
+        list-style: none;
+        @include mixins.font(1.6rem, 600, 150%);
+
+    }
+
+    a {
+        text-decoration: none;
+        color: constants.$color-text-dark;
+    }
+}
+
+.header__menu {
+    text-align: center;
+    text-decoration: none;
+    color: constants.$color-text-dark;
+    @include mixins.font(1.6rem, 600, 150%);
+
+    span {
+        vertical-align: top;
+    }
+
+    .icon-coffee-cup {
+        margin-left: 4px;
+        width: 20px;
+        height: 20px;
+    }
+
+    &_burger {
+        display: none;
+        @include mixins.media-tablet {
+            display: block;
+        }
+    }
+
+    &_header {
+        @include mixins.media-tablet {
+            display: none;
+        }
+    }
+}

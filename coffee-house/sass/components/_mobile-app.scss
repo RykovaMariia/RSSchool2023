@@ -1,0 +1,107 @@
+@use '../abstracts/constants';
+@use '../abstracts/mixins';
+@use '../abstracts/placeholders';
+
+.mobile-app__wrapper {
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+
+    @include mixins.media-middle {
+        flex-wrap: wrap;
+    }
+
+    @include mixins.media-mobile {
+        gap: 40px;
+    }
+}
+
+.mobile-app__left, .mobile-app__right {
+    width: 100%;
+    max-width: 630px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+
+    @include mixins.media-tablet {
+        max-width: 688px;
+    }
+  
+    p {
+        color: constants.$color-text-dark;
+        @include mixins.font(1.6rem, 400, 150%);
+    }
+
+    .mobile-app__buttons {
+        display: flex;
+        gap: 20px;
+
+        @include mixins.media-tablet {
+            flex-wrap: wrap;
+        }
+    }
+}
+
+.mobile-app__right {
+    align-items: center;
+}
+
+.mobile-button {
+    box-sizing: border-box;
+    width: 200px;
+    padding: 12px 20px;
+    display: flex;
+    gap: 8px;
+    border: 1px solid constants.$color-border-dark;
+    border-radius: 100px;
+    text-decoration: none;
+    cursor: pointer;
+    @extend %transition;
+
+    .button-icon {
+        fill: constants.$color-text-dark;
+        width: 36px;
+        height: 36px;
+        @extend %transition;
+    }
+
+    .button-app__content {
+        text-align: left;
+        color: constants.$color-text-dark;
+        @include mixins.font(1rem, 600, 140%);
+        @extend %transition;
+
+        span {
+            @include mixins.font(1.6rem, 600, 150%);
+        }
+    }
+
+    @include mixins.media-hover {
+        &:hover {
+            background-color: constants.$color-background-container;
+    
+            .button-app__content {
+                color: constants.$color-text-light;
+            }
+    
+            .button-icon {
+                fill: constants.$color-text-light;
+            }
+        }
+    }
+}
+
+.mobiles-img {
+    width: 100%;
+
+    @include mixins.media-tablet {
+        max-width: 630px;
+    }
+
+    @include mixins.media-mobile {
+        max-width: 348px;
+        padding: 0;
+    }
+}
